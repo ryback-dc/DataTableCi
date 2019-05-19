@@ -25,3 +25,15 @@ cara penggunaan
 			  $orderBy		 = "";
         $sql_details   = "load nama array database config"
 			  echo json_encode(  $this->datatablelibs->simple( $_POST, $sql_details, $table, $primaryKey, $columns, $joinQuery, $extraWhere, $groupBy ,$orderBy ) );
+
+
+
+2. Ajax Datatables 
+
+$(document).ready(function() {
+    $('#example').DataTable( {
+        "processing": true,
+        "serverSide": true,
+        "ajax": "../server_side/scripts/server_processing.php"
+    } );
+} );
